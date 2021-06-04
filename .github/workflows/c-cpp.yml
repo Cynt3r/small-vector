@@ -13,6 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: dependencies
+      run: apt-get update && apt-get -y install make autoconf && apt-get install -y libboost-dev
     - name: build
       run: make compile
     - name: test
